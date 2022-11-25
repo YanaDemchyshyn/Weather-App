@@ -65,6 +65,7 @@ form {
 #description {
     font-size: 14px;
     font-weight: 500;
+    text-transform: capitalize;
 }
 .week-day {
     font-size: 14px;
