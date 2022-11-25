@@ -32,6 +32,9 @@ function formatTime(timestamp) {
     let time = new Date(timestamp);
     let hours = time.getHours();
     let minutes = time.getMinutes();
+    if (minutes < 10) {
+        minutes = `0${minutes}`;
+    }
     return `Last update: ${hours}:${minutes}`;
 }
 function displayTemperature(response) {
