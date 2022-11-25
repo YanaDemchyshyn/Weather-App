@@ -58,8 +58,13 @@ function displayTemperature(response) {
     timeElement.innerHTML = formatTime(response.data.time * 1000);
     let dataElement = document.querySelector(".date");
     dataElement.innerHTML = formatDate(response.data.time * 1000);
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute(
+        "src",
+        `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+    );
 }
 let apiKey = "14b37c21t13746dfa0b52a2b355co69b";
-let city = "Paris";
+let city = "Kyiv";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayTemperature);
