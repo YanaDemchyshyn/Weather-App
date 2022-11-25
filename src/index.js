@@ -1,3 +1,9 @@
+function formatTime(timestamp) {
+    let time = new Date(timestamp);
+    let hours = time.getHours();
+    let minutes = time.getMinutes();
+    return `Last update: ${hours}:${minutes}`;
+}
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#currentTemperature");
     temperatureElement.innerHTML = Math.round(
@@ -15,6 +21,8 @@ function displayTemperature(response) {
     windElement.innerHTML = `Wind speed: ${Math.round(
         response.data.wind.speed
     )} m/s`;
+    let timeElement = document.querySelector(".time");
+    timeElement.innerHTML = formatTime(response.data.time * 1000);
 }
 let apiKey = "14b37c21t13746dfa0b52a2b355co69b";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query={Kyiv}&key=${apiKey}&units=metric`;
