@@ -64,7 +64,17 @@ function displayTemperature(response) {
         `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
     );
 }
-let apiKey = "14b37c21t13746dfa0b52a2b355co69b";
-let city = "Kyiv";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-axios.get(apiUrl).then(displayTemperature);
+search("Kyiv");
+
+function search(city) {
+    let apiKey = "14b37c21t13746dfa0b52a2b355co69b";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayTemperature);
+}
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#search-input");
+    search(cityInputElement.value);
+}
+let form = document.querySelector(".search-form");
+form.addEventListener("submit", handleSubmit);
