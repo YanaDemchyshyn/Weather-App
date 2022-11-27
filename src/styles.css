@@ -1,3 +1,8 @@
+.weather-app {
+    max-width: 580px;
+    width: 100%;
+    margin: 15px auto;
+}
 .container {
     background: rgb(238, 242, 255);
     background: linear-gradient(
@@ -6,11 +11,8 @@
         rgba(248, 249, 255, 1) 83%,
         rgba(253, 253, 255, 1) 100%
     );
-    margin: 15px auto;
     text-align: center;
     padding: 15px;
-    max-width: 580px;
-    width: 100%;
     border: 1px solid black;
     border-radius: 8px;
 }
@@ -55,12 +57,14 @@ form {
     font-size: 15px;
 }
 #currentTemperature {
-    font-size: 45px;
+    font-size: 50px;
     font-weight: 400;
 }
 #units {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
+    position: relative;
+    top: -19px;
 }
 #description {
     font-size: 14px;
@@ -76,5 +80,12 @@ form {
     text-decoration: none;
 }
 #farenheit-link {
+    text-decoration: none;
+}
+.source-code {
+    margin: 3px 10px;
+    font-size: 13px;
+}
+.source-code a {
     text-decoration: none;
 }

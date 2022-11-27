@@ -15,54 +15,69 @@
         <link rel="stylesheet" href="src/styles.css" />
     </head>
     <body>
-        <div class="container">
-            <form class="search-form">
-                <input
-                    class="enter-text"
-                    type="search"
-                    placeholder="Enter a city"
-                    autofocus="on"
-                    autocomplete="off"
-                    id="search-input"
-                />
-                <input class="search-button" type="submit" value="Search" />
-            </form>
-            <div class="row">
-                <div class="col-6">
-                    <div class="left-part">
-                        <div id="city">Kyiv</div>
-                        <div class="date">
-                            <span id="day"></span>
-                            <span id="month"></span>
-                            <span id="date"></span>
-                        </div>
-                        <div class="time">
-                            <span id="hours"></span><span id="minutes"></span>
-                        </div>
-                        <div class="currentWeather">
-                            <img src="" id="icon" width="100px" />
-                            <span id="currentTemperature"></span>
-                            <span id="units"
-                                ><a href="#" id="celsius-link" class="active">
-                                    °C</a
+        <div class="weather-app">
+            <div class="container">
+                <form class="search-form">
+                    <input
+                        class="enter-text"
+                        type="search"
+                        placeholder="Enter a city"
+                        autofocus="on"
+                        autocomplete="off"
+                        id="search-input"
+                    />
+                    <input class="search-button" type="submit" value="Search" />
+                </form>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="left-part">
+                            <div id="city">Kyiv</div>
+                            <div class="date">
+                                <span id="day"></span>
+                                <span id="month"></span>
+                                <span id="date"></span>
+                            </div>
+                            <div class="time">
+                                <span id="hours"></span
+                                ><span id="minutes"></span>
+                            </div>
+                            <div class="currentWeather">
+                                <img src="" id="icon" width="100px" />
+                                <span id="currentTemperature"></span>
+                                <span id="units"
+                                    ><a
+                                        href="#"
+                                        id="celsius-link"
+                                        class="active"
+                                    >
+                                        °C</a
+                                    >
+                                    |
+                                    <a href="#" id="farenheit-link">°F</a></span
                                 >
-                                |
-                                <a href="#" id="farenheit-link">°F</a></span
-                            >
 
-                            <div id="description"></div>
+                                <div id="description"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="right-part">
+                            <div class="other-inf">
+                                <div id="humidity">Humidity:</div>
+                                <div id="pressure">Pressure:</div>
+                                <div id="wind">Wind speed:</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
-                    <div class="right-part">
-                        <div class="other-inf">
-                            <div id="humidity">Humidity:</div>
-                            <div id="pressure">Pressure:</div>
-                            <div id="wind">Wind speed:</div>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="source-code">
+                <a
+                    href="https://github.com/YanaDemchyshyn/Weather-App"
+                    target="_blank"
+                    >Open source-code</a
+                >
+                by Yana Demchyshyn
             </div>
         </div>
         <script src="src/index.js"></script>
