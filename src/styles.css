@@ -69,3 +69,12 @@ form {
 #description::first-letter {
     text-transform: capitalize;
 }
+.active {
+    color: black;
+}
+#celsius-link {
+    text-decoration: none;
+}
+#farenheit-link {
+    text-decoration: none;
+}
