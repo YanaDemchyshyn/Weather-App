@@ -103,3 +103,26 @@ farenheitLink.addEventListener("click", showFarenheitTemp);
 
 let celsiusiLink = document.querySelector("#celsius-link");
 celsiusiLink.addEventListener("click", showCelsiusTemp);
+
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+    let forecastHTML = `<div class="row">`;
+    let days = ["Tuesday", "Wednesday", "Thursday", "Friday", "Suterday"];
+    days.forEach(function (day) {
+        forecastHTML =
+            forecastHTML +
+            ` <div class="col-2">
+                            <div class="week-day">${day}</div>
+                            <div class="img">
+                                <img src="#" width="40px" />
+                            </div>
+                            <div class="temp-forecast">
+                                <span class="temp=max">10° </span> |
+                                <span class="temp=min"> 5°</span>
+                            </div>
+                    </div>`;
+    });
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
