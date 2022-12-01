@@ -90,3 +90,10 @@ form {
 .source-code a {
     text-decoration: none;
 }
+.week-day {
+    font-size: 14px;
+    font-weight: 500;
+}
+hr {
+    color: rgb(113, 113, 161);
+}
