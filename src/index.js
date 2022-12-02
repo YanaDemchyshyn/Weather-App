@@ -104,7 +104,8 @@ farenheitLink.addEventListener("click", showFarenheitTemp);
 let celsiusiLink = document.querySelector("#celsius-link");
 celsiusiLink.addEventListener("click", showCelsiusTemp);
 
-function displayForecast() {
+function displayForecast(response) {
+    console.log(response.data);
     let forecastElement = document.querySelector("#forecast");
     let forecastHTML = `<div class="row">`;
     let days = ["Tuesday", "Wednesday", "Thursday", "Friday", "Suterday"];
@@ -125,4 +126,10 @@ function displayForecast() {
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
 }
-displayForecast();
+
+function getForecast(city) {
+    let apiKey = "14b37c21t13746dfa0b52a2b355co69b";
+    let apiUrlNew = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(apiUrlNew).then(displayForecast);
+}
+getForecast("Kyiv");
