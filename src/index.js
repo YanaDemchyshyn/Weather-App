@@ -76,6 +76,7 @@ function handleSubmit(event) {
     event.preventDefault();
     let cityInputElement = document.querySelector("#search-input");
     search(cityInputElement.value);
+    getForecast(cityInputElement.value);
 }
 let form = document.querySelector(".search-form");
 form.addEventListener("submit", handleSubmit);
@@ -125,10 +126,11 @@ function displayForecast(response) {
     let forecast = response.data.daily;
     let forecastElement = document.querySelector("#forecast");
     let forecastHTML = `<div class="row">`;
-    forecast.forEach(function (forecastDay) {
-        forecastHTML =
-            forecastHTML +
-            ` <div class="col-2">
+    forecast.forEach(function (forecastDay, index) {
+        if (index >= 1 && index <= 4) {
+            forecastHTML =
+                forecastHTML +
+                ` <div class="col-3">
                             <div class="week-day">${formatDay(
                                 forecastDay.time
                             )}</div>
@@ -146,6 +148,7 @@ function displayForecast(response) {
                                 )} </span>
                             </div>
                     </div>`;
+        }
     });
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
