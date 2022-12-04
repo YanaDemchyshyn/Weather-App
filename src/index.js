@@ -81,30 +81,6 @@ function handleSubmit(event) {
 let form = document.querySelector(".search-form");
 form.addEventListener("submit", handleSubmit);
 
-function showCelsiusTemp(event) {
-    event.preventDefault();
-    celsiusiLink.classList.add("active");
-    farenheitLink.classList.remove("active");
-    let temperatureElement = document.querySelector("#currentTemperature");
-    temperatureElement.innerHTML = Math.round(celsiusTemp);
-}
-
-function showFarenheitTemp(event) {
-    event.preventDefault();
-    let farenheitTemp = (celsiusTemp * 9) / 5 + 32;
-    celsiusiLink.classList.remove("active");
-    farenheitLink.classList.add("active");
-    let temperatureElement = document.querySelector("#currentTemperature");
-    temperatureElement.innerHTML = Math.round(farenheitTemp);
-}
-let celsiusTemp = null;
-
-let farenheitLink = document.querySelector("#farenheit-link");
-farenheitLink.addEventListener("click", showFarenheitTemp);
-
-let celsiusiLink = document.querySelector("#celsius-link");
-celsiusiLink.addEventListener("click", showCelsiusTemp);
-
 function formatDay(timestamp) {
     let date = new Date(timestamp * 1000);
     let day = date.getDay();
@@ -122,7 +98,6 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-    console.log(response.data);
     let forecast = response.data.daily;
     let forecastElement = document.querySelector("#forecast");
     let forecastHTML = `<div class="row">`;
