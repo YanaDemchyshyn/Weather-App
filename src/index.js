@@ -102,17 +102,17 @@ function displayForecast(response) {
     let forecastElement = document.querySelector("#forecast");
     let forecastHTML = `<div class="row">`;
     forecast.forEach(function (forecastDay, index) {
-        if (index >= 1 && index <= 4) {
+        if (index >= 1 && index <= 5) {
             forecastHTML =
                 forecastHTML +
-                ` <div class="col-3">
+                ` <div class="col forecast">
                             <div class="week-day">${formatDay(
                                 forecastDay.time
                             )}</div>
                             <div class="img">
                                 <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
                                     forecastDay.condition.icon
-                                }.png" width="40px" />
+                                }.png" width="38px" />
                             </div>
                             <div class="temp-forecast">
                                 <span class="temp=max">${Math.round(
