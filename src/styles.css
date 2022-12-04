@@ -29,9 +29,9 @@ form {
     margin-bottom: 5px;
 }
 .search-button {
-    max-width: 80px;
+    max-width: 85px;
     width: 100%;
-    height: 32px;
+    height: 31px;
     border-radius: 3px;
     background-color: rgb(97, 136, 163);
     color: white;
@@ -67,7 +67,7 @@ form {
     font-size: 14px;
     font-weight: 600;
     position: relative;
-    top: -26px;
+    top: -21px;
 }
 #description {
     font-size: 14px;
@@ -97,7 +97,7 @@ hr {
     padding-bottom: 5px;
 }
 .source-code {
-    margin: 3px 8px;
+    margin: 3px 10px;
     font-size: 12px;
 }
 .source-code a {
